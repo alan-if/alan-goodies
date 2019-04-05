@@ -7,6 +7,12 @@ A collection of assorted assets for [Alan IF] — the Adventure LANguage for Int
 Created by [Tristano Ajmone] on April 5, 2019.
 License: each asset has its own license.
 
+# Assets Index
+
+- [`/libs/`](./libs) — legacy Alan Libraries:
+    + [`/ALAN-Library_0.6/`][ALAN-Library_0.6] — ALAN Library v0.6.2.
+
+
 # Alan Links
 
 - [Alan website]
@@ -32,5 +38,10 @@ License: each asset has its own license.
 <!-- people -->
 
 [Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
+
+<!-- project files & folders -->
+
+[ALAN-Library_0.6]: ./libs/ALAN-Library_0.6/ "Navigate folder"
+
 
 <!-- EOF -->
