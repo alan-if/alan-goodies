@@ -120,6 +120,12 @@ LICENSE      text
 *.wbmp  binary
 *.webp  binary
 
+## ==============================
+## THIRD PARTY TOOLS FILE FORMATS
+## ==============================
+# Dia Diagram Editor: http://dia-installer.de/
+*.dia   binary
+
 # ==============================================================================
 #                                GitHub Linguist                                
 # ==============================================================================

@@ -13,7 +13,7 @@ License: each asset has its own license.
     + [`/ALAN-Library_0.6/`][ALAN-Library_0.6] — ALAN Library v0.6.2.
 - [`/images/`](./images):
     + [`/alan-logo/`](./images/alan-logo/)
-
+    + [`/predefined-classes/`](./images/predefined-classes/) — diagram of Alan built-in classes.
 
 # Alan Links
 
