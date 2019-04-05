@@ -11,6 +11,8 @@ License: each asset has its own license.
 
 - [`/libs/`](./libs) — legacy Alan Libraries:
     + [`/ALAN-Library_0.6/`][ALAN-Library_0.6] — ALAN Library v0.6.2.
+- [`/images/`](./images):
+    + [`/alan-logo/`](./images/alan-logo/)
 
 
 # Alan Links
