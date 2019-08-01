@@ -33,7 +33,7 @@ License: each asset has its own license.
 [Alan website]: https://www.alanif.se/ "Visit Alan website"
 
 [Alan IF Yahoo group]: https://groups.yahoo.com/neo/groups/alan-if/info "Visit the Alan IF group at Yahoo! Groups"
-[Alan Git repository]: https://bitbucket.org/alanif/alan "Visit Alan Git repository on Bitbucket"
+[Alan Git repository]: https://github.com/alan-if/alan/ "Visit Alan Git repository on GitHub"
 
 [Alan Standard Library]: https://github.com/AnssiR66/AlanStdLib "Visit the official GitHub repo of Alan Standard Library"
 
