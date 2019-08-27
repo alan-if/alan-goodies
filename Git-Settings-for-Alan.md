@@ -16,6 +16,11 @@ Some guidelines on how to correctly setup a Git repository for Alan projects.
     - [Git Attributes](#git-attributes)
     - [Ignoring Files](#ignoring-files)
 - [Cross-Editors Configurations](#cross-editors-configurations)
+    - [EditorConfig and Continuous Integration](#editorconfig-and-continuous-integration)
+- [External Links](#external-links)
+    - [Configuring Git Repositories](#configuring-git-repositories)
+    - [EditorConfig](#editorconfig)
+    - [Repository Automation and Build Testing](#repository-automation-and-build-testing)
 
 <!-- /MarkdownTOC -->
 
@@ -196,10 +201,63 @@ trim_trailing_whitespace = true
 insert_final_newline = true
 ```
 
-Although indentation isn't a clear-cut issue in Alan sources, setting indentation to use 2 spaces instead of tabs is a good base setting.
+Although indentation isn't a clear-cut issue in Alan sources, setting indentation to use 2 spaces instead of tabs is a good base setting for most editors — but not for validating the contents of a project (see below).
 
 The key aspect of the above settings is the `latin1` charset, which allows editors and GitHub to treat Alan files with [ISO-8859-1] encoding (a setting not available via Git configurations).
-This should also improve visualization on GitHub, as well as code diffing in various tools that support [EditorConfig], and prevent UTF-8 misrepresentation of some Latin1 characters.
+This should also improve visualization on GitHub, as well as code diffing in various tools that support [EditorConfig] — and prevent UTF-8 misrepresentation of some Latin1 characters.
+
+## EditorConfig and Continuous Integration
+
+Besides providing editor-agnostic settings, EditorConfig files can also be used to validate projects files, and to automate commits validation via continuous integration services like [Travis CI].
+
+There are numerous tools to carry out file validations via EditorConfig settings.
+For example, the __[editorconfig-checker]__ tool (available as a binary standalone CLI executable, or as an NPM package) can be used for this purpose, allowing to carry out build pass validation on pull-requests and commits, to ensure that all contributed files meet the project settings requirements.
+
+This type of automation in collaborative projects is a real blessing, for it allows to spare time by spotting problems at pull-request/commit time — instead of having to unroll them after a merge, having realized that some files are not well formatted.
+
+Or you could just exploit the EditorConfig settings locally, via some command line tool, for your own benefit (without having to set-up continuous integration on GitHub).
+The point is that by providing an EditorConfig file you're opening your project to numerous possible automation uses; and those who don't need it won't be bothered nor harmed by its presence.
+
+When using EditorConfig settings for this purpose, you might want to add an editorconfig-checker configuration file to suppress some of the settings in the `.editorconfig` file, which might work as editor guidelines but are not strictly enforced — e.g. the `indent_size` value, which is not strict in Alan real use, otherwise the __editorconfig-checker__ tool would report as an error any indentation which is not a multiple of 2, whereas in Alan sources we commonly encounter code formatted like this:
+
+```alan
+The lounge IsA location.
+  Description
+    "A very relaxing room, with soft lights and
+     ambient music playing in the background."
+End the.
+```
+
+… where the `ambient` word is aligned to the text, not to the opening quotes.
+So you don't want the code validator to report this as an error.
+
+Tools like __[editorconfig-checker]__ [allow using custom setting files] or command lines options to restrict the checks to certain entries of the `.editorconfig` file.
+E.g., __editorconfig-checker__ uses an `.ecrc` file to customize the validation process (via JSON), so you could either resort to an `.ecrc` settings file or use CLI options to limit or override its behaviour in your repository when using [Travis CI] build tests.
+
+# External Links
+
+- [Wikipedia » ISO-8859-1][ISO-8859-1]
+
+## Configuring Git Repositories
+
+- [Git documentation » gitattributes]
+- [Git documentation » gitignore]
+- _[Pro Git book]_, by Scott Chacon and Ben Straub:
+    + [2.2 Git Basics — Recording Changes to the Repository » Ignoring Files]
+    + [8.1 Customizing Git — Git Configuration]
+    + [8.2 Customizing Git — Git Attributes]
+- _[Mind the End of Your Line]_ — Git EOL normalization and settings tutorial by [Tim Clem].
+
+## EditorConfig
+
+- [editorconfig.org][EditorConfig] — EditorConfig official website.
+- [editorconfig-checker] — tool to validate project files according to `.editorconfig` settings.
+
+## Repository Automation and Build Testing
+
+- [Travis CI] — continuous integration service for GitHub projects.
+- [Alan Builder] — a [Travis CI] compliant build tool for Alan IF adventures projects.
+
 
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
@@ -207,8 +265,14 @@ This should also improve visualization on GitHub, as well as code diffing in var
 
 [ISO-8859-1]: https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "Read Wikipedia page on ISO/IEC 8859-1 encoding"
 [Alan Goodies]: https://github.com/tajmone/alan-goodies "Visit the Alan Goodies project on GitHub"
-[EditorConfig]: https://editorconfig.org/ "Visit the EditorConfig project website"
 [Github natively supports EditorConfig]: https://github.com/editorconfig/editorconfig.github.com/pull/48
+[Travis CI]: https://travis-ci.com/ "Visit Travis CI website"
+
+<!-- EditorConfig -->
+
+[EditorConfig]: https://editorconfig.org/ "Visit the EditorConfig project website"
+[editorconfig-checker]: https://editorconfig-checker.github.io "Visit editorconfig-checker website"
+[allow using custom setting files]: https://github.com/editorconfig-checker/editorconfig-checker#configuration "Learn more about configuring editorconfig-checker"
 
 <!-- Git, GitHub, etc. -->
 
@@ -227,10 +291,19 @@ This should also improve visualization on GitHub, as well as code diffing in var
 
 [Mind the End of Your Line]: https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
 
+[Git documentation » gitattributes]: https://git-scm.com/docs/gitattributes
+[Git documentation » gitignore]: https://git-scm.com/docs/gitignore
+
+[Pro Git book]: https://git-scm.com/book/en/v2
+[2.2 Git Basics — Recording Changes to the Repository » Ignoring Files]: https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#_ignoring
+[8.1 Customizing Git — Git Configuration]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+[8.2 Customizing Git — Git Attributes]: https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes
+
 <!-- Alan -->
 
 [Alan Repository Template]: https://github.com/alan-if/alan-repository-template "Visit the Alan Repository Template on GitHub"
 [AlanIDE]: https://www.alanif.se/download-alan-v3/alanide "Go to the AlanIDE download page on Alan website"
+[Alan Builder]: https://github.com/alan-if/Alan-Builder "Visit the Alan Builder project on GitHub"
 
 <!-- people and organizations -->
 
