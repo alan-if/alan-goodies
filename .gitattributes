@@ -127,7 +127,7 @@ LICENSE      text
 *.dia   binary
 
 # ==============================================================================
-#                                GitHub Linguist                                
+#                                GitHub Linguist
 # ==============================================================================
 #  -- https://github.com/github/linguist
 #
@@ -139,17 +139,22 @@ LICENSE      text
 #      https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
 
 
-## =================
-## Alan Source Files
-## =================
-# Even if Alan syntax is not supported, hopefully these settings might help the
-# repo statics to show up correctly (long-shot guess):
+## ==================
+## Alan Related Files
+## ==================
 *.alan    linguist-language=Alan
-*.i       linguist-language=Alan
 *.alan    linguist-detectable=true
+*.i       linguist-language=Alan
 *.i       linguist-detectable=true
-
 *.ifid    linguist-generated=true
+
+# Set solutions and transcripts as Text (prose) and exclude them from repo stats,
+# but preserve diffing them by avoiding use of 'linguist-generated', although
+# transcripts are generated files technically speaking.
+*.a3sol   linguist-language=Text
+*.a3sol   linguist-detectable=false
+*.a3log   linguist-language=Text
+*.a3log   linguist-detectable=false
 
 ## =============
 ## AlanIDE Files
