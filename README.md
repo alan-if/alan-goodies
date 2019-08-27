@@ -36,6 +36,7 @@ License: each asset has its own license.
 - [`/images/`](./images):
     + [`/alan-logo/`](./images/alan-logo/)
     + [`/predefined-classes/`](./images/predefined-classes/) — diagram of Alan built-in classes.
+- [`Git-Settings-for-Alan.md`](./Git-Settings-for-Alan.md) — tutorial on how to configure Git repositories for Alan projects.
 
 # About This Project
 
