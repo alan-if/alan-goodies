@@ -48,18 +48,18 @@ If you've created useful assets that you'd like to share with Alan community, fe
 # Useful Alan Links
 
 - [www.AlanIF.se][Alan] — the Alan website.
-- [Alan Yahoo Group] — for community help, announcements and discussions.
-- [Alan sources on Bitbucket][Alan Bitbucket] — source code repository on Bitbucket.
-- [Alan sources on GitHub][Alan GitHub] — source code repository on GitHub.
+- [Alan IF Discussions] — mailing list for community help, announcements and discussions.
+- [Alan sources] — official source code repository on GitHub.
 - [Alan IF Development team] — GitHub profile and public projects.
 
 ## Documentation and Tutorials
 
-- [Alan Docs] — GitHub repository for Alan documentation.
-- _[The Alan Manual]_ — online-readable version of the latest _ALAN Adventure Language Reference Manual_.
-- _[Alan Cookbook v2]_ — by [Anssi Räisänen].
-- _[The Alan Beginner's Guide]_ — by Michael Arnaud (2006). [Tutorial source files available](https://github.com/alan-if/alan-docs/tree/master/alanguide/alanguide-code).
-- _[Alan IDE Reference Guide]_ — by Robert DeFord (2018).
+- [Alan Docs] — Source repository of the Alan documentation (AsciiDoc) on GitHub.
+- [Alan Docs website] — Official Alan documentation website, where you can read and download various documents:
+    + _[The Alan Manual]_ — on-line version of the latest _ALAN Adventure Language Reference Manual_.
+    + _[Alan Cookbook v2]_ — by [Anssi Räisänen].
+    + _[The Alan Beginner's Guide]_ — by Michael Arnaud (2006). [Tutorial source files available](https://github.com/alan-if/alan-docs/tree/master/alanguide/alanguide-code).
+    + _[Alan IDE Reference Guide]_ — by Robert DeFord (2018).
 
 ## Code Examples
 
@@ -88,7 +88,7 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 
 <!-----------------------------------------------------------------------------
-                               REFERENCE LINKS                                
+                               REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [Alan Goodies]: https://github.com/tajmone/alan-goodies "Visit the Alan Goodies project on GitHub"
@@ -97,9 +97,8 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 [Alan]: https://www.alanif.se/ "Visit the Alan website"
 [Alan IF]: https://www.alanif.se/ "Visit the Alan website"
-[Alan Yahoo Group]: https://groups.yahoo.com/neo/groups/alan-if/info "Visit the Alan-IF group on Yahoo"
-[Alan Bitbucket]: https://bitbucket.org/alanif/alan/ "Visit the Alan source repository on Bitbucket"
-[Alan GitHub]: https://github.com/alan-if/alan/ "Visit the Alan source repository on GitHub"
+[Alan IF Discussions]: https://groups.google.com/g/alan-if/ "Visit Alan IF discussions at Google Groups"
+[Alan sources]: https://github.com/alan-if/alan/ "Visit the Alan source repository on GitHub"
 [Alan SDK]: https://www.alanif.se/download-alan-v3/development-kits "Go to the Alan SDK section of the Alan website"
 
 [Artistic License 2.0]: https://opensource.org/licenses/Artistic-2.0
@@ -108,7 +107,6 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 [AlanIDE]: https://www.alanif.se/download-alan-v3/alanide "Go to the AlanIDE download page on Alan website"
 [AlanIDE info page]: https://www.alanif.se/information/alanide/alanide-intro "View the AlanIDE information page on Alan website"
-[Alan IDE Reference Guide]: https://github.com/alan-if/alan-docs/blob/master/ideguide/ideguide.pdf "Get the 'Alan IDE Reference Guide' (PDF format)"
 [AlanIDE sources]: https://github.com/thoni56/alanide "Visit the AlanIDE source repository on GitHub"
 
 <!-- Alan StdLib -->
@@ -127,10 +125,13 @@ If you've created useful assets that you'd like to share with Alan community, fe
 <!-- Alan docs & tutorials -->
 
 [Alan Docs]: https://github.com/alan-if/alan-docs "Visit the Alan Docs project on GitHub"
-[The Alan Manual]: http://htmlpreview.github.io/?https://github.com/alan-if/alan-docs/blob/master/manual/manual.html "Live HTML preview of the Alan Manual"
-[Alan Cookbook v2]: https://www.alanif.se/download-alan-v3/all-downloads/documentation/alan-cookbook-v2 "Go to the 'Alan Cookbook' download page on Alan website"
+[Alan Docs website]: https://git.io/alan-docs "Visit the Alan Docs website"
 
-[The Alan Beginner's Guide]: http://htmlpreview.github.io/?https://github.com/alan-if/alan-docs/blob/master/alanguide/alanguide.html "Live HTML preview of the Alan Beginner's Guide"
+[The Alan Manual]: https://alan-if.github.io/alan-docs/manual-beta/manual.html "The Alan Manual, on-line edition"
+[The Alan Beginner's Guide]: https://alan-if.github.io/alan-docs/alanguide/alanguide.html "The Alan Beginner's Guide (HTML edition)"
+[Alan IDE Reference Guide]: https://alan-if.github.io/alan-docs/ideguide/ideguide.pdf "Get the 'Alan IDE Reference Guide' (PDF format)"
+
+[Alan Cookbook v2]: https://alan-if.github.io/alan-docs/alancookbook/alancookbookv2.pdf "Get the 'Alan Cookbook' (PDF format)"
 
 [Samples & examples for Alan v3]: https://www.alanif.se/information/samples
 [Alan by Examples]: https://github.com/alan-if/alan-by-examples "Visit the Alan by Examples project"

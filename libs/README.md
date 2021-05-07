@@ -44,7 +44,7 @@ From what I've gathered, the evolution of the ALAN standard libraries is roughly
 - The original __ALAN Library__, up to v0.4.0 (2001–2002), was designed for ALAN 2.
 - __ALAN Library v0.4.1__ was ported to work with ALAN 3, and was updated up to v0.6.2 (2002–2007).
 - __[ALAN Library 1]__ (2010–2011) was a new library design (redesign?) by [Anssi Räisänen], where the library code was organized into four main sumodules.
-- The __[ALAN Standard Library 2]__ (2016–) was designed by [Anssi Räisänen], this being a new library altogether, targeting specifically ALAN 3 new features and introducing extensive features in formally organized library structure. This is the current ALAN Library in use today, v2.1 being the latest release. 
+- The __[ALAN Standard Library 2]__ (2016–) was designed by [Anssi Räisänen], this being a new library altogether, targeting specifically ALAN 3 new features and introducing extensive features in formally organized library structure. This is the current ALAN Library in use today, v2.1 being the latest release.
 
 The original ALAN Library, up to v0.6.2 was the result of the collaborative joint effort of Göran Forslund, Stephen Griffiths and Thomas Nilsson (now Thomas Nilefalk). The [ALAN Library 1] was designed by [Anssi Räisänen]. The new [ALAN Standard Library 2]  (aka StdLib) is the work of [Anssi Räisänen].
 
@@ -53,16 +53,12 @@ All three libraries are distributed under the Artistic License 2.0.
 
 
 <!-----------------------------------------------------------------------------
-                               REFERENCE LINKS                                
+                               REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [ALAN Library 1]: https://www.alanif.se/download-alan-v3/download-library/library-v1-00 "Go to the download page of ALAN Library v1.0 on ALAN website"
 
 [ALAN Standard Library 2]: https://github.com/AnssiR66/AlanStdLib "Visit the official repository of the ALAN Standard Library 2"
-
-[ALAN repository]: https://bitbucket.org/alanif/alan "Visit the official ALAN repository on Bitbucket"
-
-
 
 <!-- project files & folders -->
 
