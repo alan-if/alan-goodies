@@ -21,7 +21,7 @@ We are confident that this image was chosen because it was freely usable, but al
 If anyone could provide us more information about the origins of this image, and its author, we'd really appreciate it.
 
 <!-----------------------------------------------------------------------------
-                               REFERENCE LINKS                                
+                               REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [Logo PSD]:  ./Alan-Logo.psd "Alan Logo in PSD file format"

@@ -10,7 +10,7 @@ Newly added images can be optimized with the following script (requires [imagemi
 - [`optimize.bat`](./optimize.bat)
 
 <!-----------------------------------------------------------------------------
-                               REFERENCE LINKS                                
+                               REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [imagemin-power-cli]: https://www.npmjs.com/package/imagemin-power-cli "View imagemin-power-cli page at NPM"

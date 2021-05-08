@@ -42,7 +42,7 @@ In order to edit the diagram's sourcefile, or to run the scripts in this folder,
 Execution of [`BUILD_SVG.bat`](./BUILD_SVG.bat) requires that Dia's binary (`dia.exe`) is made available on the system PATH.
 
 <!-----------------------------------------------------------------------------
-                               REFERENCE LINKS                                
+                               REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
 [Dia]: http://dia-installer.de/ "Visit Dia's website"
