@@ -1,3 +1,7 @@
+[![Travis CI Status][travis badge]][travis link]&nbsp;
+[![Alan version][alan badge]][alan link]&nbsp;
+![License][license badge]
+
 # Alan Goodies
 
 A collection of assorted assets for [Alan IF] — the Adventure LANguage for Interactive Fiction.
@@ -148,6 +152,14 @@ If you've created useful assets that you'd like to share with Alan community, fe
 [Anssi Räisänen]: https://github.com/AnssiR66 "View Anssi Räisänen's GitHub profile"
 [Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
 [Thomas Nilefalk]: https://github.com/thoni56 "View Thomas Nilefalk's GitHub profile"
+
+<!-- badges -->
+
+[travis badge]: https://travis-ci.com/tajmone/alan-goodies.svg?branch=master "Travis CI: EditorConfig validation status"
+[travis link]: https://travis-ci.com/tajmone/alan-goodies
+[alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
+[alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
+[license badge]: https://img.shields.io/badge/license-various-blue
 
 <!-- project files & folders -->
 
