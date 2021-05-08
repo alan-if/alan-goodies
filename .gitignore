@@ -1,31 +1,31 @@
-################################################################################
-# Alan Goodies -- An assorted collection of Alan IF assets                     #
-# https://github.com/tajmone/alan-goodies                                      #
-################################################################################
+##############################################################
+#  Alan Goodies -- An assorted collection of Alan IF assets  #
+#  https://github.com/tajmone/alan-goodies                   #
+##############################################################
 
-
-*.tmp
-## ==========
 ## Alan Files
-## ==========
+#############
 *.a3c
 *.a3r
 *.ifid
 *.sav
 
-## =============
+
 ## AlanIDE Files
-## =============
+################
 .project
 
-## ==========
-## Sass cache
-## ==========
-## Just in case someone still uses Ruby Sass:
-.sass-cache/
+
+## Misc TEMP Files
+##################
+
+*.tmp
+
+# Chrome's temporary logs:
+debug.log
 
 ## Misc Work Files
-## ===============
+##################
 
 # Custom Backup Files
 ___*.*
@@ -41,7 +41,7 @@ ___*.*
 
 
 # ==============================================================================
-#                              MISC IGNORE PATTERNS                             
+#                              MISC IGNORE PATTERNS
 # ==============================================================================
 # Based on ".gitignore" created by:
 # https://www.gitignore.io/api/windows,linux,macos,purebasic
@@ -110,8 +110,5 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
-# Windows shortcuts
-*.lnk
 
 # <<< End of https://www.gitignore.io/api/windows,linux,macos,purebasic

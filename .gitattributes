@@ -1,65 +1,67 @@
-################################################################################
-# Alan Goodies -- An assorted collection of Alan IF assets                     #
-# https://github.com/tajmone/alan-goodies                                      #
-################################################################################
+##############################################################
+#  Alan Goodies -- An assorted collection of Alan IF assets  #
+#  https://github.com/tajmone/alan-goodies                   #
+##############################################################
 
 * text=auto
 
-## ============
-## Alan Files
-## ============
-*.a3c      binary
-*.a3log    text
-*.a3r      binary
-*.a3sol    text
-*.alan     text
-*.i        text
-*.ifid     text
-*.sav      binary
+# ==============================================================================
+# ============================= ALAN RELATED FILES =============================
+# ==============================================================================
 
-## =============
+[attr]Alan text linguist-language=Alan linguist-detectable=true
+
+## Alan Sources
+###############
+*.alan   Alan
+*.i      Alan
+*.ifid   text linguist-generated=true
+# UTF-8 converted Alan sources for Asciidoctor inclusion:
+*.utf8_alan    text linguist-generated=true
+
+## Alan Story-Files
+###################
+*.a3c   binary
+*.a3r   binary
+*.sav   binary
+
+## Adventures Solutions & Transcripts
+#####################################
+*.a3sol   text linguist-detectable=false
+*.a3log   text linguist-generated=true
+*.log     text linguist-generated=true
+
 ## AlanIDE Files
-## =============
-.project   text
+################
+.project   text linguist-language=XML linguist-generated=true
 
-## ============
+# ==============================================================================
+# ========================= OTHER REPOSITORY CONTENTS ==========================
+# ==============================================================================
+
+
+## Repository Configuration
+###########################
+.editorconfig    text eol=lf
+.gitlab-ci.yml   text eol=lf
+.travis.yml      text eol=lf
+.gitattributes   text eol=lf
+.gitconfig       text eol=lf
+.gitignore       text eol=lf
+.gitmodules      text eol=lf
+
+
 ## Scripts
-## ============
-*.bat      text eol=crlf
-*.py       text
-*.py3      text
-*.rb       text
-*.sh       text eol=lf
+##########
+*.bat   text eol=crlf
+*.py    text
+*.py3   text
+*.rb    text
+*.sh    text eol=lf
 
-## ============
-## SASS/Scss
-## ============
-*.sass     text
-*.scss     text
 
-## ==================
-## Misc. data formats
-## ==================
-*.csv      text
-*.haml     text
-*.json     text
-*.xhtml    text
-*.xml      text
-*.xsl      text
-*.yaml     text
-*.yml      text
-
-## =================
-## Web-related files
-## =================
-*.htm      text
-*.html     text
-*.css      text eol=lf
-*.js       text
-
-## ===================
-## DOcumentation files
-## ===================
+## Documentation
+################
 *.adoc       text
 *.asciidoc   text
 *.docx       binary
@@ -72,100 +74,10 @@ COPYING      text
 LICENSE      text
 *LICENSE*    text
 
-## ===================
-## Configuration files
-## ===================
-*.cnf          text
-*.conf         text
-*.config       text
-*.ini          text
-*.prefs        text
-.editorconfig  text eol=lf
-.gitattributes text
-.gitconfig     text
-.gitignore     text
-.gitmodules    text eol=lf
 
-## ===========
-## Archives
-## ===========
-*.7z    binary
-*.gz    binary
-*.jar   binary
-*.rar   binary
-*.tar   binary
-*.zip   binary
+## Third Party Tools File Formats
+#################################
+# Dia Diagram Editor: http://dia-installer.de
+*.dia    binary
 
-## ===========
-## Graphics
-## ===========
-*.ai    binary
-*.bmp   binary
-*.eps   binary
-*.gif   binary
-*.ico   binary
-*.jng   binary
-*.jp2   binary
-*.jpg   binary
-*.jpeg  binary
-*.jpx   binary
-*.jxr   binary
-*.png   binary
-*.psb   binary
-*.psd   binary
-*.svg   binary
-*.svgz  binary
-*.tif   binary
-*.tiff  binary
-*.wbmp  binary
-*.webp  binary
-
-## ==============================
-## THIRD PARTY TOOLS FILE FORMATS
-## ==============================
-# Dia Diagram Editor: http://dia-installer.de/
-*.dia   binary
-
-# ==============================================================================
-#                                GitHub Linguist
-# ==============================================================================
-#  -- https://github.com/github/linguist
-#
-# Manually define/override some extension so that GitHub's Linguist library can
-# 1) Correctly gather statistics on source files, and
-# 2) Use proper syntax highlighting on GitHub's WebUI.
-
-# NOTE: Alan syntax is not supported by Linguist:
-#      https://github.com/github/linguist/blob/master/lib/linguist/languages.yml
-
-
-## ==================
-## Alan Related Files
-## ==================
-*.alan    linguist-language=Alan
-*.alan    linguist-detectable=true
-*.i       linguist-language=Alan
-*.i       linguist-detectable=true
-*.ifid    linguist-generated=true
-
-# Set solutions and transcripts as Text (prose) and exclude them from repo stats,
-# but preserve diffing them by avoiding use of 'linguist-generated', although
-# transcripts are generated files technically speaking.
-*.a3sol   linguist-language=Text
-*.a3sol   linguist-detectable=false
-*.a3log   linguist-language=Text
-*.a3log   linguist-detectable=false
-
-## =============
-## AlanIDE Files
-## =============
-.project   linguist-language=XML
-.project   linguist-generated=true
-
-## Sample Patterns
-## ---------------------------
-# *.ext    linguist-detectable=true
-# *.ext    linguist-documentation=true
-# *.ext    linguist-generated=true
-# *.ext    linguist-language=LANG
-# *.ext    linguist-vendored=true
+# EOF #
