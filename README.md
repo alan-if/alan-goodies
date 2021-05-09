@@ -36,7 +36,8 @@ License: each asset has its own license.
 # Assets Index
 
 - [`/libs/`](./libs) — legacy Alan Libraries:
-    + [`/ALAN-Library_0.6/`][ALAN-Library_0.6] — ALAN Library v0.6.2.
+    + [`/ALAN-Library_0.6/`][Lib 0.6] — **Library v0.6.2** (Nov. 2007).
+    + [`/ALAN-Stdandard-Library_1.00/`][StdLib 1.00] — **StdLib v1.00** (Sept. 2011).
 - [`/images/`](./images):
     + [`/alan-logo/`](./images/alan-logo/)
     + [`/predefined-classes/`](./images/predefined-classes/) — diagram of Alan built-in classes.
@@ -86,7 +87,6 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 ## Miscellanea
 
-- [Alan Builder] — a [Travis CI] compliant build tool for Alan IF adventures projects.
 - [Alan Bugs Testbed] — collaborative project to report and test Alan bugs.
 - [Alan Repository Template] — A boilerplate for quickly creating Alan repositories with the right settings.
 
@@ -120,7 +120,6 @@ If you've created useful assets that you'd like to share with Alan community, fe
 <!-- misc Alan projects  -->
 
 [Alan Bugs Testbed]: https://github.com/alan-if/alan-bugs-testbed "Visit the Alan Bugs Testbed project on GitHub"
-[Alan Builder]: https://github.com/alan-if/Alan-Builder "Visit the Alan Builder project on GitHub"
 [Alan Italian]: https://github.com/tajmone/Alan3-Italian "Visit the Alan Italian project on GitHub"
 [Alan Repository Template]: https://github.com/alan-if/alan-repository-template "Visit the Alan Repository Template on GitHub"
 [Alan StdLibLab]: https://github.com/tajmone/Alan-StdLibLab "Visit the Alan StdLibLab project on GitHub"
@@ -131,11 +130,10 @@ If you've created useful assets that you'd like to share with Alan community, fe
 [Alan Docs]: https://github.com/alan-if/alan-docs "Visit the Alan Docs project on GitHub"
 [Alan Docs website]: https://git.io/alan-docs "Visit the Alan Docs website"
 
-[The Alan Manual]: https://alan-if.github.io/alan-docs/manual-beta/manual.html "The Alan Manual, on-line edition"
-[The Alan Beginner's Guide]: https://alan-if.github.io/alan-docs/alanguide/alanguide.html "The Alan Beginner's Guide (HTML edition)"
-[Alan IDE Reference Guide]: https://alan-if.github.io/alan-docs/ideguide/ideguide.pdf "Get the 'Alan IDE Reference Guide' (PDF format)"
-
 [Alan Cookbook v2]: https://alan-if.github.io/alan-docs/alancookbook/alancookbookv2.pdf "Get the 'Alan Cookbook' (PDF format)"
+[Alan IDE Reference Guide]: https://alan-if.github.io/alan-docs/ideguide/ideguide.pdf "Get the 'Alan IDE Reference Guide' (PDF format)"
+[The Alan Beginner's Guide]: https://alan-if.github.io/alan-docs/alanguide/alanguide.html "The Alan Beginner's Guide (HTML edition)"
+[The Alan Manual]: https://alan-if.github.io/alan-docs/manual-beta/manual.html "The Alan Manual, on-line edition"
 
 [Samples & examples for Alan v3]: https://www.alanif.se/information/samples
 [Alan by Examples]: https://github.com/alan-if/alan-by-examples "Visit the Alan by Examples project"
@@ -163,7 +161,7 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 <!-- project files & folders -->
 
-[ALAN-Library_0.6]: ./libs/ALAN-Library_0.6/ "Navigate folder"
-
+[Lib 0.6]: ./libs/ALAN-Library_0.6/ "Navigate to ALAN Library v0.6 folder"
+[StdLib 1.00]: ./libs/ALAN-Stdandard-Library_1.00/ "Navigate to Standard Library v1.00 folder"
 
 <!-- EOF -->

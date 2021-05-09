@@ -20,13 +20,13 @@ Library Info
 To the best of my knowledge, Library v0.6.2 was the latest update in the v0.x
 series, later succeeded by Library v1, and then by the Standard Library 2.
 
-This is a old version of the Alan Library, originally created for Alan 2 and
-then ported to Alan 3. It's revival is mainly for historical reasons, to allow
+This is a old version of the Alan Library, originally created for Alan2 and
+then ported to Alan3. It's revival is mainly for historical reasons, to allow
 compiling old adventures that depend on it.
 
-The sources of Library v0.6.2 were recovered from the [ALAN repository] on
-Bitbucket (were the Library was originally hosted), from [commit c44766fa]
-(2017-04-17), which was the last commit before its removal from the repository.
+The sources of Library v0.6.2 were recovered from the [ALAN repository]  (were
+the Library was originally hosted), from [commit c44766fa] (2017-04-17), which
+was the last commit before its removal from the repository.
 
 [ALAN repository]: https://github.com/alan-if/alan
 
@@ -92,11 +92,11 @@ Code Fixes
 
     It looks like something went wrong during the upstream commit. In any case,
     this was causing a compile error, so it had to be changed, for it deals
-    with a backward-compatiblity breaking change in the Alan language.
+    with a backward-compatibility breaking change in the Alan language.
 
 * `talk.i`
     * Replaced `$o` with `$1`, for the former special parameter symbol is now
-      depracated and might not be safe to use in future versions of Alan.
+      deprecated and might not be safe to use in future versions of Alan.
 
 
 
