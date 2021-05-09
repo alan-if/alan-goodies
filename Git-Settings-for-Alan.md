@@ -264,7 +264,7 @@ E.g., __editorconfig-checker__ uses an `.ecrc` file to customize the validation 
 ------------------------------------------------------------------------------>
 
 [ISO-8859-1]: https://en.wikipedia.org/wiki/ISO/IEC_8859-1 "Read Wikipedia page on ISO/IEC 8859-1 encoding"
-[Alan Goodies]: https://github.com/tajmone/alan-goodies "Visit the Alan Goodies project on GitHub"
+[Alan Goodies]: https://github.com/alan-if/alan-goodies "Visit the Alan Goodies project on GitHub"
 [Github natively supports EditorConfig]: https://github.com/editorconfig/editorconfig.github.com/pull/48
 [Travis CI]: https://travis-ci.com/ "Visit Travis CI website"
 

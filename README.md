@@ -6,7 +6,7 @@
 
 A collection of assorted assets for [Alan IF] — the Adventure LANguage for Interactive Fiction.
 
-- https://github.com/tajmone/alan-goodies
+- https://github.com/alan-if/alan-goodies
 
 Created by [Tristano Ajmone] on April 5, 2019.
 
@@ -95,7 +95,7 @@ If you've created useful assets that you'd like to share with Alan community, fe
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
 
-[Alan Goodies]: https://github.com/tajmone/alan-goodies "Visit the Alan Goodies project on GitHub"
+[Alan Goodies]: https://github.com/alan-if/alan-goodies "Visit the Alan Goodies project on GitHub"
 
 <!-- ALAN -->
 
@@ -155,8 +155,8 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 <!-- badges -->
 
-[travis badge]: https://travis-ci.com/tajmone/alan-goodies.svg?branch=master "Travis CI: EditorConfig validation status"
-[travis link]: https://travis-ci.com/tajmone/alan-goodies
+[travis badge]: https://travis-ci.com/alan-if/alan-goodies.svg?branch=master "Travis CI: EditorConfig validation status"
+[travis link]: https://travis-ci.com/alan-if/alan-goodies
 [alan badge]: https://img.shields.io/badge/ALAN-3.0beta7-yellow
 [alan link]: https://www.alanif.se/download-alan-v3/development-kits/development-kits-3-0beta7 "Tested with Alan SDK 3.0beta7"
 [license badge]: https://img.shields.io/badge/license-various-blue
