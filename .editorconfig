@@ -12,7 +12,7 @@ root = true
 [*.{alan,i,a3s,a3t}]
 indent_style = space
 indent_size = unset
-charset = latin1
+charset = unset
 
 # Additional settings for non-generated Alan files
 [*.{alan,i,a3s}]

@@ -4,6 +4,7 @@ Archived copies of legacy Alan Libraries, no longer actively maintained but requ
 
 - [`/ALAN-Library_0.6/`][Lib 0.6] — Library v0.6.2 (Nov. 2007).
 - [`/ALAN-Stdandard-Library_1.00/`][StdLib 1.00] — StdLib v1.00 (Sept. 2011).
+- [`/pALANte_0.6.1e/`][pALANte 0.6.1e] — Spanish Library v0.6.1e (Apr. 2010).
 
 
 -----
@@ -15,6 +16,7 @@ Archived copies of legacy Alan Libraries, no longer actively maintained but requ
 - [Introduction](#introduction)
 - [ALAN Library v0.6.2](#alan-library-v062)
 - [ALAN Standard Library v1.00](#alan-standard-library-v100)
+- [pALANte v0.6.1e](#palante-v061e)
 
 <!-- /MarkdownTOC -->
 
@@ -58,6 +60,17 @@ Source files polished by [Tristano Ajmone] to meet the code styles conventions o
 - License: [Artistic License 2.0](./ALAN-Stdandard-Library_1.00/StdLib1/COPYING).
 
 
+# pALANte v0.6.1e
+
+- [`/pALANte_0.6.1e/`][pALANte 0.6.1e]
+
+Spanish Alan IF library v0.6.1e (April, 2010), by [Bruce Humphrey], downloaded from the CAAD (Club de Aventuras AD) portal:
+
+- https://www.caad.es/?q=node/1718
+
+Based on the English library v0.6.1dev and the pALANte library v0.1 by Marcos Donnantuoni.
+
+
 <!-----------------------------------------------------------------------------
                                REFERENCE LINKS
 ------------------------------------------------------------------------------>
@@ -71,10 +84,12 @@ Source files polished by [Tristano Ajmone] to meet the code styles conventions o
 
 [Lib 0.6]: ./ALAN-Library_0.6/ "Navigate to library folder"
 [StdLib 1.00]: ./ALAN-Stdandard-Library_1.00/ "Navigate to library folder"
+[pALANte 0.6.1e]: ./pALANte_0.6.1e/ "Navigate to library folder"
 
 <!-- people -->
 
 [Anssi Räisänen]: https://github.com/AnssiR66 "View Anssi Räisänen's GitHub profile"
+[Bruce Humphrey]: https://alanif.blogspot.com/ "Visit Bruce Humphrey's blog on ALAN Spanish"
 [Thomas Nilefalk]: https://github.com/thoni56 "View Thomas Nilefalk's GitHub profile"
 [Tristano Ajmone]: https://github.com/tajmone "View Tristano Ajmone's GitHub profile"
 

@@ -1,0 +1,220 @@
+Arun - Adventure Language Interpreter version 3.0beta7 (2020-09-07 22:49:37)
+Version of 'vampiro.a3c' is 3.0beta7!
+'vampiro' contains the following IFIDs:
+  IFID:	UUID://50ace0da-d51a-dd51-6ca3-9470805ae177//
+
+
+    -Memorias de Rexxe-
+ (c) 1998 Jaume Alcazo Castellarnau.
+
+ Esta es la versión 1.0.1, programada en ALAN del juego "Vampiro"
+original de Aventuras ALCAZO. Para más información teclea HISTORIA en el
+juego.
+
+Muchas gracias por jugar
+
+
+
+    Despiertas aturdido. Después de unos segundos te incorporas en el
+frío suelo de piedra y ves que estás en un castillo. ¡Ahora recuerdas!
+Eres reXXe y tu misión es la de matar al vampiro. TIENES que matar al
+vampiro que vive en la parte superior del castillo...
+
+
+
+Hall
+Estás en el vestíbulo del castillo. El ambiente es muy húmedo y frío.
+Estás en un pasillo que se extiende hacia el norte. Al sur queda la
+puerta de entrada al castillo.
+
+> N
+El Pasillo
+Te encuentras en medio del pasillo principal de este piso. Al oeste está
+la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
+
+> O
+Cocina
+Estás en la cocina del castillo. Esto está lleno de cacerolas y de
+cacharros para cocinar. Hay un horno, un fregadero y un armario pequeño.
+
+> TOMA TODO
+(cuchillo) Tomas el cuchillo.
+
+> E
+El Pasillo
+Te encuentras en medio del pasillo principal de este piso. Al oeste está
+la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
+
+> E
+Biblioteca
+Te hallas en la biblioteca del castillo. Obviamente está llena de libros
+interesantes, pero desgraciadamente no tienes tiempo para leerlos. Hay un
+pequeño crucifijo plateado en un lado. En el suelo hay una palanca de
+acero.
+
+> TOMA TODO
+(crucifijo plateado) Tomas el crucifijo plateado.
+
+(palanca) Tomas la palanca.
+
+> O
+El Pasillo
+Te encuentras en medio del pasillo principal de este piso. Al oeste está
+la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
+
+> N
+Las Escaleras
+Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
+suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+estar.
+
+> BAJA
+Sotano
+En este pequeño sótano hace mucho calor, sientes una sensación de
+recogimiento. Está todo muy sucio. Hay un barril aquí, también hay unas
+escaleras que suben.
+
+> ABRE BARRIL CON PALANCA
+-¡Clack!- Haciendo palanca logras abrir el barril.
+
+> TOMA MARTILLO
+Tomas el martillo.
+
+> SUBE
+Las Escaleras
+Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
+suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+estar.
+
+> E
+Sala de Estar
+Es la sala más acogedora de todo el castillo. En la chimenea los últimos
+restos de algún fuego chisporrotean alegremente. Hay una mesa grande con
+una silla al lado. De la pared cuelgan bastantes trofeos de caza y
+adornos varios.
+
+> X CHIMENEA
+Es una chimenea hecha de ladrillos y muy elegante.
+
+> X CHIMENEA
+Es una chimenea hecha de ladrillos y muy elegante.
+
+> X FUEGO
+Son los restos de algún fuego reciente. Entre ellas encuentras un trozo
+de madera.
+
+> TOMA MADERA
+Tomas la madera.
+
+> O
+Las Escaleras
+Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
+suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+estar.
+
+> I
+Tienes un cuchillo, un martillo, una madera, una palanca y un crucifijo
+plateado. Llevas un traje barato.
+
+> AFILA MADERA CON CUCHILLO
+Afilas la madera con el cuchillo ¡y obtienes una estaca!
+
+> O
+Dormitorio
+Estás en un dormitorio no muy grande ni tampoco muy pequeño. Es bastante
+austero. Sólo hay una cama y un armario. Hay un armario.
+
+> X CAMA
+Está cubierta de sábanas.
+
+> X SABANAS
+Sábanas corrientes y molientes. Entre ellas encuentras una pequeña
+llavecita.
+
+> TOMA LLAVECITA
+Tomas la pequeña llavecita.
+
+> DEJA PALANCA
+Dejas la palanca.
+
+> TOMA LLAVECITA
+Ya lo tienes.
+
+> E
+Las Escaleras
+Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
+suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+estar.
+
+> S
+El Pasillo
+Te encuentras en medio del pasillo principal de este piso. Al oeste está
+la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
+
+> O
+Cocina
+Estás en la cocina del castillo. Esto está lleno de cacerolas y de
+cacharros para cocinar. Hay un horno, un fregadero y un armario pequeño.
+
+> ABRE ARMARIO CON LLAVE
+Giras la llavecita y abres el armario.
+
+> X ARMARIO
+Está abierto. Al examinarlo se te cae al suelo una ristra de ajos que
+estaba en su interior.
+
+> M
+Cocina
+Estás en la cocina del castillo. Esto está lleno de cacerolas y de
+cacharros para cocinar. Hay un horno, un fregadero y un armario pequeño. 
+Una ristra de ajos.
+
+> TOMA AJOS
+Tomas la ristra de ajos.
+
+> I
+Tienes un martillo, una ristra de ajos, una pequeña llavecita, una estaca, 
+un cuchillo y un crucifijo plateado. Llevas un traje barato.
+
+> DEJA LLAVECITA
+Dejas la pequeña llavecita.
+
+> TOMA AJOS
+Ya lo tienes.
+
+> E
+El Pasillo
+Te encuentras en medio del pasillo principal de este piso. Al oeste está
+la cocina y al este la biblioteca. El pasillo sigue hacia el norte.
+
+> N
+Las Escaleras
+Te hallas en el final del pasillo. Delante de tí ves unas escaleras que
+suben y otras que bajan. Al oeste está el dormitorio y al este la sala de
+estar.
+
+> ARRIBA
+Rellano
+Estás en el piso superior del castillo. Aquí hace aún más frío que abajo.
+Detrás de tí están las escaleras que bajan y hacia el oeste está la
+habitación del vampiro. Conducen al piso inferior.
+
+> O
+Habitacion
+Estás en una habitación desnuda. Unicamente hay un altar en el centro.
+Encima del altar puedes ver un ataud.
+
+> ABRE ATAUD
+Abres el ataud. Dentro contemplas la horrible cara del vampiro. Protegido
+por los ajos y el crucifijo empiezas tu horrible tarea. Le clavas la
+estaca en el pecho y de un terrible golpe de martillo la hundes en lo más
+profundo de su ser. Con un grito de agonía se deshace en polvo y tú
+acabas tu misión aquí. ^^Por ahora...^^
+
+
+
+
+¡¡FINIS!!
+
+¿Quiere revertir (undo), recomenzar (restart), restaurar (restore) o
+salir (quit)?

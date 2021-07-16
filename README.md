@@ -38,6 +38,7 @@ License: each asset has its own license.
 - [`/libs/`](./libs) — legacy Alan Libraries:
     + [`/ALAN-Library_0.6/`][Lib 0.6] — **Library v0.6.2** (Nov. 2007).
     + [`/ALAN-Stdandard-Library_1.00/`][StdLib 1.00] — **StdLib v1.00** (Sept. 2011).
+    + [`/pALANte_0.6.1e/`][pALANte 0.6.1e] — **pALANte v0.6.1e** Spanish library (Apr. 2010).
 - [`/images/`](./images):
     + [`/alan-logo/`](./images/alan-logo/)
     + [`/predefined-classes/`](./images/predefined-classes/) — diagram of Alan built-in classes.
@@ -163,5 +164,6 @@ If you've created useful assets that you'd like to share with Alan community, fe
 
 [Lib 0.6]: ./libs/ALAN-Library_0.6/ "Navigate to ALAN Library v0.6 folder"
 [StdLib 1.00]: ./libs/ALAN-Stdandard-Library_1.00/ "Navigate to Standard Library v1.00 folder"
+[pALANte 0.6.1e]: ./libs/pALANte_0.6.1e/ "Navigate to pALANte v0.6.1e library folder"
 
 <!-- EOF -->

@@ -1,0 +1,24 @@
+-- Puedes encontrar más información de alan en el manual de ALAN, que encontrarás (en inglés)
+-- en la web  https://alanif.se
+--
+-- Puedes encontrar más información sobre la librería pALANte de alan (esta, lib_es) en:
+--    https://foro.caad.es          los foros del CAAD
+--    https://alanif.blogspot.com   blog sobre la librería pALANte
+
+-- Ejemplo de aventura mínima para ALAN
+
+import 'palante.i'. -- importar la librería española
+
+
+The inicio Isa location
+  Name Inicio.  -- nombre que aparece en el intérprete
+    Description
+      "Toda historia empieza en un lugar..."
+End The inicio.
+
+
+-- Iniciar la aventura --
+Start At inicio.
+schedule ini_terms at limbo after 0. -- necesario para que funcione la librería castellana.
+
+"$tInicio: Toda historia tiene un inicio...$n"

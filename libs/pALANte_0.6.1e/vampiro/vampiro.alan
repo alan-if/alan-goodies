@@ -1,0 +1,871 @@
+--  Vampiro para ALAN pALANte
+--
+-- Versión 1.0.1
+--
+-- Esta es la versión en ALAN + libreria española de "Memorias de reXXe", también
+-- conocido como "Vampiro". Este código fuente forma parte del
+-- "Proyecto Vampiro", del cual puedes encontrar más información en
+-- https://www.caad.es/informate/vampiro/
+--
+-- Para procesar este fichero necesitarás la librería LIB_ES y el
+-- programa ALAN.
+--
+-- La implementación en pALANte es de Bruce Humphrey, realizada para
+-- comprobar la librería 0.6.0e (realizada entre Marcos Donantuonni y Bruce Humphrey)
+
+import 'palante.i'.
+
+
+Every lugar Isa Location
+End Every lugar.
+
+-- Control de elementos principales. Contador.
+Every elemento Isa Object
+  Verb Tomar  -- En cada tomar de los elementos principales incrementamos contador.
+    Does
+      Set elementos Of variables To elementos Of variables + 1.
+  End Verb.
+  Verb Dejar  -- -- En cada tomar de los elementos principales decrementamos contador.
+    Does
+      Set elementos Of variables To elementos Of variables - 1.
+  End Verb.
+End Every elemento.
+
+-- Creamos nuestra propia clase ContenedorCerr para contenedores cerrados.
+Every ContenedorCerr Isa Object
+  Opaque Container -- no se puede ver en su interior...
+    Header
+      "Contiene "
+  Is Not tomable.
+  Is abrible.
+  Is cerrable.
+  Is Not abierto.
+    Verb abrir does after -- esto se ejecuta después del abrir por defecto.
+      Make this Not Opaque. -- necesario, o aunque esté abierto, seguiremos sin poder coger los objetos.
+      List this. -- listamos el contenido.
+  End Verb.
+  Verb abrir_con
+    When obj
+      Does After
+        Make this Not Opaque.
+        List this.
+  End Verb.
+  Verb cerrar does after
+    Make this Opaque.
+  End verb.
+  Verb cerrar_con
+    When obj
+      Does After
+        Make this Opaque.
+    End verb.
+End Every ContenedorCerr.
+
+
+-------------------------
+--  1) El Hall
+-------------------------
+
+The Hall Isa lugar
+  Description "Estás en el vestíbulo del castillo. El ambiente es muy
+               húmedo y frío. Estás en un pasillo que se extiende hacia
+               el norte. Al sur queda la puerta de entrada al castillo."
+  Exit norte to Pasillo.
+End The Hall.
+
+The lapuerta Isa Escenario At Hall
+  Name puerta.
+  Name salida.
+  Name entrada.
+  Is femenina.
+  Is not abierto.
+  Description ""
+  Verb abrir
+    Does Only "¡Te he dicho que no la puedes abrir, Melón!"
+  End Verb.
+  Verb examinar
+    Does Only "Es muy grande y está cerrada. No la vas a poder abrir."
+  End Verb.
+End The lapuerta.
+
+The pasillodesdevestibulo Isa Escenario At Hall
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only "Es el pasillo principal, se extiende hacia el norte."
+  End Verb.
+End The pasillodesdevestibulo.
+
+The objVestibulo Isa Escenario At Hall
+  Name Vestíbulo.
+  Name Vestibulo.
+  Name Hall.
+  Verb examinar
+    Does Only "El ambiente es muy húmedo y frío.
+               Estás en un pasillo que se extiende hacia el norte.
+               Al sur queda la puerta de entrada al castillo."
+  End Verb.
+End The objVestibulo.
+
+-------------------------
+--  2) El Pasillo
+-------------------------
+The Pasillo Isa lugar
+  Name 'El Pasillo'.
+  Name Pasillo.
+  Description
+    "Te encuentras en medio del pasillo principal de este piso.
+     Al oeste está la cocina y al este la biblioteca.
+     El pasillo sigue hacia el norte."
+  Exit norte To HabEscaleras.
+  Exit sur To Hall.
+  Exit este To Biblioteca.
+  Exit oeste To Cocina.
+End The Pasillo.
+
+The Traje Isa Object In llevado
+  Name traje barato.
+  Name traje.
+  Is llevable.
+  Description "Un traje."
+  Verb Examinar
+    Does Only
+      "Es un traje barato comprado en las rebajas."
+  End Verb.
+End The Traje.
+
+The pasillodesdepasillo Isa Escenario At Pasillo
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only
+      "Es el pasillo principal, se extiende hacia el norte y el sur."
+  End Verb.
+End The pasillodesdepasillo.
+
+-------------------------
+--  3) La Biblioteca
+-------------------------
+The Biblioteca Isa lugar
+  Name Biblioteca.
+  Description
+    "Te hallas en la biblioteca del castillo. Obviamente está
+     llena de libros interesantes, pero desgraciadamente no
+     tienes tiempo para leerlos."
+  Exit oeste To Pasillo.
+End The Biblioteca.
+
+Synonyms
+  plata, plateada = plateado.
+  cruz = crucifijo.
+The crucifijo Isa elemento At Biblioteca.
+  Name crucifijo plateado.
+  Name crucifijo.
+  Description
+    "Hay un pequeño crucifijo plateado en un lado."
+  Verb examinar
+    Does Only
+      "Es un pequeño crucifijo plateado. Es uno de los cuatro
+       elementos que nos servirán para derrotar al vampiro."
+  End Verb.
+End The crucifijo.
+
+The palanca Isa Object At Biblioteca.
+  Name palanca.
+  Is femenina.
+  Description
+    "En el suelo hay una palanca de acero."
+  Verb examinar
+    Does Only
+      "Es una palanca de acero toledano. Sirve para forzar cosas."
+  End Verb.
+End The palanca.
+
+The libros Isa Escenario At Biblioteca.
+  Name libros.
+  Name libro.
+  Is leible.
+  Is plural.
+  Description ""
+  Verb examinar
+    Does Only
+      "Montones de libros, pero no tengo tiempo para leer ahora."
+  End Verb.
+  Verb leer
+    Does Only
+      "Montones de libros, pero no tengo tiempo para leer ahora."
+  End Verb.
+  Verb tomar
+    Does Only
+      "No quiero cargar con los libros, no hay tiempo para leerlos."
+  End Verb.
+End The libros.
+
+The pasillodesdebiblioteca Isa Escenario At Biblioteca
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only "El pasillo está al oeste."
+  End Verb.
+End The pasillodesdebiblioteca.
+
+-------------------------
+--  4) La Cocina
+-------------------------
+The Cocina Isa lugar
+  Name Cocina.
+  Description
+    "Estás en la cocina del castillo. Esto está lleno de
+     cacerolas y de cacharros para cocinar. Hay un horno, un
+     fregadero y un armario pequeño."
+  Exit este To Pasillo.
+End The Cocina.
+
+The Horno Isa Escenario At Cocina
+  Name Horno.
+  Description ""
+  Verb Examinar
+    Does Only "Un simple horno, no tiene ninguna importancia."
+  End Verb.
+End The Horno.
+
+Synonyms
+  cacharro, cacerola, cacerolas = cacharros.
+The Cacharros Isa Escenario At Cocina
+  Name cacharros.
+  Is plural.
+  Description ""
+  Verb Examinar
+    Does Only "Simples cacerolas y cacharros de cocina."
+  End Verb.
+End The Cacharros.
+
+The Cuchillo Isa Object In Fregadero
+  Name cuchillo.
+  Description "Un cuchillo."
+  Verb Examinar
+    Does Only "Un simple cuchillo de cocina. Pincha."
+  End Verb.
+End The Cuchillo.
+
+The Fregadero Isa Escenario At Cocina
+  Container
+    Header
+      "En el fregadero hay"
+    Else
+      "El fregadero está vacío."
+  Name fregadero.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Es un fregadero de piedra."
+      List Fregadero.
+  End Verb.
+End The Fregadero.
+
+The Armario Isa ContenedorCerr At Cocina
+  Container
+    Header
+      "En el interior del armario hay"
+    Else
+      ""
+  Name armario.
+  Name armario pequeño.
+  Is Not tomable.
+  Is cerrojo.
+  Is cerrojable.
+  Description ""
+  Verb Examinar
+    Does Only
+      If Armario Is abierto Then
+        "Está abierto."
+        If ajos At Limbo Then
+          "Al examinarlo se te cae al suelo una ristra
+           de ajos que estaba en su interior."
+          Locate Ajos Here.
+        End If.
+        List Armario.
+      Else
+        "Está cerrado."
+      End If.
+  End Verb.
+  Verb Abrir
+    Check armario Is Not abierto
+      Else "Ya está abierto."
+    Does Only
+    If armario Is Not cerrojo Then
+      "Abres el armario."
+    Else
+      "Está cerrado con llave"
+    End If.
+  End Verb.
+
+  Verb Abrir_con
+    When obj
+      Check armario Is Not abierto
+        Else "Ya está abierto."
+      And (key) = llavecita
+        Else "No puedes abrir el armario con " Say The (key).
+    Does Only
+      "Giras la llavecita y abres el armario."
+      Make armario abierto.
+      Make armario Not cerrojo.
+   End Verb.
+End The Armario.
+
+The pasillodesdecocina Isa Escenario At Biblioteca
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only "El pasillo está al este."
+  End Verb.
+End The pasillodesdecocina.
+
+-------------------------
+--  5) La Escalera
+-------------------------
+The HabEscaleras Isa lugar
+  Name 'Las Escaleras'.
+  Description
+    "Te hallas en el final del pasillo. Delante de tí ves unas
+     escaleras que suben y otras que bajan. Al oeste está el
+     dormitorio y al este la sala de estar."
+  Exit sur To Pasillo.
+  Exit oeste To Dormitorio.
+  Exit este To Sala.
+  Exit abajo To Sotano.
+  Exit arriba To Rellano.
+End The HabEscaleras.
+
+Synonyms
+  escalones, escalon, escalera = escaleras.
+The escalones_escalera Isa Escenario at HabEscaleras
+  Name escaleras.
+  Is femenina.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Unas polvorientas escaleras. Unas suben y otras bajan."
+  End Verb.
+End The escalones_escalera.
+
+The pasillodesdeescaleras Isa Escenario At Biblioteca
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only
+      "El pasillo principal del castillo se extiende hacia el sur."
+  End Verb.
+End The pasillodesdeescaleras.
+
+-------------------------
+--  6) El Dormitorio
+-------------------------
+The Dormitorio Isa lugar
+  Name Dormitorio.
+  Description
+    "Estás en un dormitorio no muy grande ni tampoco muy pequeño.
+     Es bastante austero. Sólo hay una cama y un armario."
+  Exit este To HabEscaleras.
+End The Dormitorio.
+
+The armario_dormitorio Isa object at Dormitorio.
+  Container
+    Header
+      "En el armario hay"
+    Else
+      ""
+  Name armario.
+  Is abierto.
+  Is abrible.
+  Is cerrable.
+  Is not tomable.
+  Verb Examinar
+    Does Only
+      "Un pequeño armario de madera"
+      If armario_dormitorio Is abierto Then
+        "(abierto)."
+        List armario_dormitorio.
+      Else
+        "(cerrado)."
+      End If.
+  End Verb.
+End The armario_dormitorio.
+
+The Cama Isa Escenario At Dormitorio
+  Name cama.
+  Is femenina.
+  Description ""
+  Verb Examinar
+    Does Only "Está cubierta de sábanas."
+  End Verb.
+End The Cama.
+
+The Sabanas Isa Object At Dormitorio
+  Name sabanas.
+  Name sábanas.
+  Name sábana.
+  Name sabana.
+  Is femenina.
+  Is plural.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Sábanas corrientes y molientes."
+      If llavecita At Limbo Then
+        "Entre ellas encuentras una pequeña llavecita."
+        Locate llavecita Here.
+      End If.
+  End Verb.
+End The Sabanas.
+
+The pasillodesdedormitorio Isa Escenario At Biblioteca
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only "El pasillo está al este."
+  End Verb.
+End The pasillodesdedormitorio.
+
+--------------------
+-- 7) Sala de Estar
+--------------------
+The Sala Isa lugar
+  Name 'Sala de Estar'.
+  Description
+    "Es la sala más acogedora de todo el castillo. En la
+     chimenea los últimos restos de algún fuego chisporrotean
+     alegremente. Hay una mesa grande con una silla al lado.
+     De la pared cuelgan bastantes trofeos de caza y adornos
+     varios."
+  Exit oeste To HabEscaleras.
+End The Sala.
+
+The trofeos Isa Escenario At Sala
+  Name trofeos.
+  Name trofeo.
+  Is plural.
+  Description ""
+  Verb Examinar
+    Does Only "Insignificante trofeos."
+  End Verb.
+End The trofeos.
+
+The adornos Isa Escenario At Sala
+  Name adornos.
+  Name adorno.
+  Is plural.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Adornan."
+  End Verb.
+End The adornos.
+
+The chimenea Isa Escenario At Sala
+  Name chimenea.
+  Name ladrillos.
+  Name ladrillo.
+  Is femenina.
+  Is buscable.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Es una chimenea hecha de ladrillos y muy elegante."
+  End Verb.
+  Verb Buscar
+    Does Only
+      "En la chimenea están los restos aún calientes de un fuego reciente."
+      If madero At Limbo Then
+        "Entre ellas encuentras un trozo de madera."
+        Locate madero Here.
+      End If.
+  End Verb.
+End The chimenea.
+
+The restos Isa Escenario_p At Sala
+  Name restos.
+  Name fuego.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Son los restos de algún fuego reciente."
+      If madero At Limbo Then
+        "Entre ellas encuentras un trozo de madera."
+        Locate madero Here.
+      End If.
+  End Verb.
+End The restos.
+
+The mesa Isa Escenario At Sala
+  Name mesa.
+  Name mesa caoba.
+  Name mesa grande.
+  Name gran mesa.
+  Is femenina.
+  Description ""
+  Verb Examinar
+    Does Only "Una mesa de caoba, bastante grande."
+  End Verb.
+End The mesa.
+
+The silla Isa Escenario At Sala
+  Name silla.
+  Name silla cómoda.
+  Is femenina.
+  Description ""
+  Verb Examinar
+    Does Only "Una cómoda silla."
+  End Verb.
+End The silla.
+
+The pasillodesdesala Isa Escenario At Biblioteca
+  Name pasillo.
+  Description ""
+  Verb examinar
+    Does Only "El pasillo está al oeste."
+  End Verb.
+End The pasillodesdesala.
+
+--------------------
+-- 8) El Sótano
+--------------------
+The Sotano Isa lugar
+  Name Sotano.
+  Description
+    "En este pequeño sótano hace mucho calor, sientes una
+     sensación de recogimiento. Está todo muy sucio. Hay un
+     barril aquí, también hay unas escaleras que suben."
+  Exit arriba To HabEscaleras.
+End The Sotano.
+
+The escalones_sotano Isa Escenario at Sotano
+  Name escaleras.
+  Is femenina.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Estos escalones conducen al piso superior."
+  End Verb.
+End The escalones_sotano.
+
+-- El barril es un objeto que no puede abrirse, a menos que se use la
+-- palanca.
+The barril Isa ContenedorCerr at Sotano
+  Name barril.
+  Is cerrojo.
+  Is cerrojable.
+  Description ""   -- ya lo mencionamos en la habitación.
+  Verb Examinar
+    Does Only
+      "Un barril de madera"
+      If barril Is abierto Then
+        "(abierto)."
+        List barril.
+      Else
+        "(cerrado)."
+      End If.
+  End Verb.
+  Verb Abrir
+  Check barril Is Not abierto
+    Else "Ya está abierto."
+  And palanca in hero
+    Else "Intentas abrirlo, pero no tienes la suficiente fuerza."
+  Does Only
+    "-¡Clack!- Haciendo palanca logras abrir el barril."
+    Make barril abierto.
+    Make barril Not Opaque.
+  End Verb.
+  Verb Abrir_con
+    When obj
+      Check barril Is Not abierto
+        Else "Ya está abierto."
+      And (key) = Palanca
+        Else "No puedes abrir el barril con " Say The (key).
+    Does Only
+      "-¡Clack!- Haciendo palanca logras abrir el barril."
+      Make barril abierto.
+      Make barril Not opaque.
+   End Verb.
+End The barril.
+
+The martillo Isa elemento In barril
+  Description "Un martillo."
+  Verb Examinar
+    Does Only
+      "Un martillo grande. Es uno de los elementos que
+       me permitirán acabar con el vampiro."
+  End Verb.
+End The martillo.
+
+--------------------
+-- Rellano Superior
+--------------------
+The Rellano Isa lugar
+  Name Rellano.
+  Description
+    "Estás en el piso superior del castillo. Aquí hace aún más
+     frío que abajo. Detrás de tí están las escaleras que bajan
+     y hacia el oeste está la habitación del vampiro."
+  Exit abajo To HabEscaleras.
+  Exit oeste To HabVampiro.
+End The Rellano.
+
+The escalones_arriba Isa Escenario At Rellano
+  Name escaleras.
+  Is Femenina.
+  Description  -- ToDo: Añadir concordancia número y género, como la versión InformAte
+    "Conducen al piso inferior."
+End The escalones_arriba.
+
+--------------------------
+-- Habitación del Vampiro
+--------------------------
+The HabVampiro Isa lugar
+  Name Habitacion.
+  Name Habitación.
+  Description
+    "Estás en una habitación desnuda. Unicamente hay un altar
+     en el centro. Encima del altar puedes ver un ataud."
+  Exit este To Rellano.
+End The HabVampiro.
+
+The Altar Isa Escenario At HabVampiro
+  Name altar.
+  Description ""
+  Verb Examinar
+    Does Only
+      "Es un altar de dura piedra.
+       Encima de éste está el ataud."
+    End Verb.
+  -- ToDo: añadir controles "no es necesario" para entrar, sentarse, estirarse, meterse, etc.
+End The Altar.
+
+Synonyms
+  feretro, féretro, caja = ataud.
+The Ataud Isa Object At HabVampiro
+  Name ataud.
+  Is Not tomable.
+  Is abrible.
+  Description ""
+  Verb Examinar
+    Does Only "Una sencilla caja de pino."
+  End Verb.
+  Verb Abrir
+    Does Only
+      If elementos Of variables = 4 Then
+        "Abres el ataud. Dentro contemplas la horrible cara del
+         vampiro. Protegido por los ajos y el crucifijo empiezas tu
+         horrible tarea. Le clavas la estaca en el pecho y de un
+         terrible golpe de martillo la hundes en lo más profundo de
+         su ser. Con un grito de agonía se deshace en polvo y tú
+         acabas tu misión aquí. ^^Por ahora...^^$n$n$n$n$n¡¡FINIS!!"
+        quit.
+      Else
+        "Necesito cuatro cosas antes de poner fin a la ~vida~ del
+         vampiro. A saber: un crucifijo, una ristra de ajos, una
+         estaca afilada y un martillo."
+      End If.
+  End Verb.
+End The Ataud.
+
+
+-----------------------------------------------------------
+-- Objetos en el Limbo: Inicialmente no están en el juego
+-----------------------------------------------------------
+The Ajos Isa elemento At Limbo
+  Name ristra de ajos.
+  Name ajos.
+  Name ristra.
+  Name ristra ajos.
+  Is comestible.
+  Is femenina.
+  Description "Una ristra de ajos."
+  Verb Examinar
+    Does Only
+      "Es una ristra entera de ajos que expelen un olor
+       un tanto asqueroso. Es uno de los cuatro elementos que me
+       servirán para derrotar al vampiro."
+  End Verb.
+  Verb Oler
+    Does Only "Puagh."
+  End Verb.
+  Verb Comer
+    Does Only "Ni hablar, me daría halitosis."
+  End Verb.
+End The Ajos.
+
+The variables Isa Object At Limbo
+  Is plural.
+  Has elementos 0.
+  Description
+    "Un contenedor para variables globales.
+     Un sucio truco. ¡Esto no es OOP correcta!"
+End The variables.
+
+The llavecita Isa Object At Limbo
+  Name pequeña llavecita.
+  Name pequeña llave.
+  Name llave.
+  Name llavecita.
+  Is femenina.
+  Description "Una pequeña llave."
+  Verb Examinar
+    Does Only
+      "Esta pequeña llavecita tiene la pinta
+       de abrir un armario o algo así."
+  End Verb.
+End The llavecita.
+
+-- El objeto que si lo afilamos, se convierte en estaca.
+The madero Isa Object At Limbo
+  Name madera.
+  Name trozo madera.
+  Name cacho madera.
+  Is femenina.
+  Description "Un trozo de madera"
+  Verb Examinar
+    Does Only
+      "Un trozo de madera, rectangular y alargado"
+  End Verb.
+  Verb Afilar
+    When obj1 -- se aplica solo cuando madera es el primer objeto
+      Check (obj2) = cuchillo -- y por supuesto, solo con el cuchillo
+        Else "No puedes afilar con" say the obj2.
+    Does Only
+      "Afilas la madera con el cuchillo
+       ¡y obtienes una estaca!"
+      Locate madero At limbo.
+      Locate estaca In hero.
+      Set elementos Of variables To elementos Of variables + 1.
+  End Verb.
+End The madero.
+
+--La estaca inicialmente no está en el juego. Aparece sólo al tratar
+-- de afilar el madero usando el cuchillo
+The estaca Isa elemento At Limbo
+  Name estaca.
+  Name estaca afilada.
+  Name madera.
+  Name madero.
+  Is femenina.
+  Description "Una estaca afilada"
+  Verb Examinar
+    Does Only
+      "Un cacho de madera rectangular y alargado,
+       uno de sus extremos esta afilado cuidadosamente.
+       Es uno de los cuatro elementos."
+  End Verb.
+  Verb Afilar
+    When obj1
+      Does Only "Ya está bastante afilada."
+  End Verb.
+End The estaca.
+
+--------------
+-- Sintaxis
+--------------
+
+-- nota: la idea en ALAN es copiar la librería de ejemplo en cada proyecto, y
+-- modificarla como necesitemos. En este caso, Vampiro, en la librería se
+-- modifica Ayuda y Puntuación para que coincida con las originales de Vampiro.
+--
+-- Otros verbos específicos para esta aventura se incluyen aquí.
+Synonyms
+  elemento = elementos.
+Syntax
+  elementos = elementos.
+
+Verb elementos
+  Does
+    "Tienes "
+    Depending on elementos of variables
+      =0 Then "0 elementos."
+      =1 Then "1 elemento."
+      =2 Then "2 elementos."
+      =3 Then "3 elementos."
+      =4 Then "4 elementos."
+    End depend.
+End Verb.
+
+Synonyms
+  afila, afilo = afilar.
+Syntax
+  afilar = 'afilar' (obj1) 'con' (obj2)
+    Where obj1 Isa Object
+      Else "Eso no se puede afilar."
+    And obj2 Isa Object
+      Else "na na naaa."
+  afilar = afilar el (obj1) con (obj2). -- varias formas para que funcione en español
+  afilar = afilar el (obj1) con el (obj2).
+  afilar = afilar (obj1) con el (obj2).
+
+Add To Every Object
+  Verb afilar
+  When obj1
+    Check obj1 In hero
+      Else "¡No tienes" say the obj1. "!"
+    And obj2 In hero
+      Else "¡No tienes" say the obj2. "!"
+    And obj2 = cuchillo
+      Else "No tiene sentido afilar con " say the obj2.
+    Does
+      "Afilas durante un rato, no consigues nada."
+  End Verb.
+End Add To.
+
+
+Syntax
+  alcazo = alcazo.
+Verb alcazo
+  Does
+    "$n$tPrimera aventura 'seria' de Aventuras Alcazo.
+     Guión, texto y programació¢n de Jaime Alcazo, pruebas
+     Jaime Alcazo, pruebas adicionales Iván Alcazo.
+     Fue necesaria una mañana de estrujamiento neuronal de
+     Jaime Alcazo para obtener el argumento (ya ves).
+     Fue necesaria una tarde para programarla y ha sido
+     revisada en algunas ocasiones en días posteriores a
+     los citados. Hecha inicialmente con SINTAC g3.
+     $n$tEsta versión está  programada con Alan 3, usando
+     la libreria Palante 0.6.0e, por Bruce Humphrey.
+     $n$tTeclea AYUDA para obtener la solución de la aventura.
+     Gracias por jugar.$n$n"
+End Verb.
+
+
+Syntax
+  historia = historia.
+Verb historia
+  Does
+    "$n$tEste juego es original de Aventuras Alcazo y el copyright
+    pertenece a Jaume Alcazo Castellarnau quien ha cedido los
+    fuentes con fines educativos. (Teclea ALCAZO para saber más
+    del juego original). La versión que estás jugando ha sido
+    reprogramada a partir del original usando el lenguaje
+    Alan, en un proyecto ideado por JLD consistente en
+    implementar el mismo juego usando diferentes lenguajes, para
+    poder comparar unos con otros. En todo caso, la idea del juego
+    y su desarrollo sigue siendo (c) de Jaume Alcazo
+    Castellarnau.$n$n
+    $tAunque el juego es el mismo, el aspecto de la pantalla al
+    jugar no intenta parecerse al original de Alcazo, sino que tiene
+    el típico aspecto de los juegos programados en Alan.$n$n"
+End Verb.
+
+------------------------------
+-- Inicializamos la aventura
+------------------------------
+Start At Hall.
+Visits 0. -- modo verbose
+schedule ini_terms at limbo after 0. -- ¡Importantísimo para funcionar en español!
+
+"$t-Memorias de Rexxe-$n
+(c) 1998 Jaume Alcazo Castellarnau.$n$n
+Esta es la versión 1.0.1, programada en ALAN del juego
+""Vampiro"" original de Aventuras ALCAZO. Para más información
+teclea HISTORIA en el juego.$n$nMuchas gracias por jugar$n$n"
+"$n$n$tDespiertas aturdido. Después de unos segundos te incorporas
+en el frío suelo de piedra y ves que estás en un
+castillo. ¡Ahora recuerdas! Eres reXXe y tu misión es la de
+matar al vampiro. TIENES que matar al vampiro que vive en la
+parte superior del castillo...$n$n"
